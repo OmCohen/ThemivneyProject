@@ -2,22 +2,28 @@ import java.util.ArrayList;
 
 public class Team {
     private Faculty faculty;
-    private ArrayList<Player> playersList;
+    private ArrayList<PlayerInTeamNode> playersList;
     private int rank;
 
 
-    public Team(Faculty faculty, ArrayList<Player> playersList, int rank) {
+    public Team(Faculty faculty, ArrayList<PlayerInTeamNode> playersList, int rank) {
         this.faculty = faculty;
         this.playersList = playersList;
         this.rank = rank;
+    }
+
+    public Team(Faculty faculty) {
+        this.faculty = faculty;
+        this.playersList = new ArrayList<PlayerInTeamNode>();
+        this.rank = 0;
     }
 
     public Faculty getFaculty() {
         return faculty;
     }
 
-    public ArrayList<Player> getPlayersList() {
-        return playersList;
+    public ArrayList<PlayerInTeamNode> getPlayersList() {
+        return this.playersList;
     }
 
     public int getRank() {
@@ -25,7 +31,7 @@ public class Team {
     }
 
 
-    public void setPlayersList(ArrayList<Player> playersList) {
+    public void setPlayersList(ArrayList<PlayerInTeamNode> playersList) {
         this.playersList = playersList;
     }
 

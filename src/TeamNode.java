@@ -1,72 +1,30 @@
-public class TeamNode {
-    private TeamNode left;
-    private TeamNode right;
-    private TeamNode middle;
-    private TeamNode p;
+public class TeamNode extends Node {
     private Team team;
 
 
-    public TeamNode(TeamNode left, TeamNode right, TeamNode middle, TeamNode p, Team team) {
-        this.left = left;
-        this.right = right;
-        this.middle = middle;
-        this.p = p;
+    public TeamNode(TeamNode left,TeamNode middle, TeamNode right, TeamNode p, TeamNode leftSibling, TeamNode rightSibling, Key key, Team team) {
+        super(left,middle, right, p, leftSibling, rightSibling, key);
+        this.team = team;
+    }
+    public TeamNode(Team team , Key key){
+        super(key);
         this.team = team;
     }
 
     public TeamNode(Team team){
-        this.left = null;
-        this.right = null;
-        this.middle = null;
-        this.p = null;
+        super();
         this.team = team;
-
     }
 
     public TeamNode(){
-        this.left = null;
-        this.right = null;
-        this.middle = null;
-        this.p = null;
-        this.team = null;
-
-    }
-
-
-    public TeamNode getLeft() {
-        return left;
-    }
-
-    public TeamNode getRight() {
-        return right;
-    }
-
-    public TeamNode getMiddle() {
-        return middle;
-    }
-
-    public TeamNode getP() {
-        return p;
+        this(null);
     }
 
     public Team getTeam() {
         return team;
     }
 
-
-    public void setLeft(TeamNode left) {
-        this.left = left;
-    }
-
-    public void setRight(TeamNode right) {
-        this.right = right;
-    }
-
-    public void setMiddle(TeamNode middle) {
-        this.middle = middle;
-    }
-
-    public void setP(TeamNode p) {
-        this.p = p;
+    public void setTeam(Team team) {
+        this.team = team;
     }
 }
